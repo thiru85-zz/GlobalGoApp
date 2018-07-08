@@ -1,18 +1,18 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: helloweb
+  name: globalgoapp
   labels:
-    app: hello
+    app: globalgoapp
 spec:
   template:
     metadata:
       labels:
-        app: hello
+        app: globalgoapp
         tier: web
     spec:
       containers:
-      - name: hello-app
-        image: gcr.io/google-samples/hello-app:1.0
+      - name: globalgoapp
+        image: gcr.io/gcpdemoproject/globalgoapp:master
         ports:
         - containerPort: 8080
