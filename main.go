@@ -49,10 +49,11 @@ func hello(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Hello, IOxKL!!\n")
 	fmt.Fprintf(w, "Version: 1.0.0\n")
 	fmt.Fprintf(w, "Container/Pod Name: %s\n", host)
-	client := &http.Client{}
+	client := &http.Client{
     	req, err := http.NewRequest("GET", "http://metadata.google.internal/computeMetadata/v1/instance/hostname", nil)
 		req.Header.Add("Metadata-Flavor", "Google")
 		resp, err := client.Do(req)
+	}
 	fmt.Fprintf(w, "K8s Node Name: %s \n", client)
 	}
 // [END all]
