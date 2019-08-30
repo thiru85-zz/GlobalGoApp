@@ -27,7 +27,7 @@ import (
 
 func main() {
 	// use PORT environment variable, or default to 8080
-	port := "8081"
+	port := "8080"
 	// if fromEnv := os.Getenv("PORT"); fromEnv != "" {
 	// 	port = fromEnv
 	// }
@@ -35,6 +35,7 @@ func main() {
 	// register hello function to handle all requests
 	server := http.NewServeMux()
 	server.HandleFunc("/", hello)
+	
 
 	// start the web server on port and accept requests
 	log.Printf("Server listening on port %s", port)
@@ -46,8 +47,8 @@ func main() {
 func hello(w http.ResponseWriter, r *http.Request) {
 	log.Printf("Serving request: %s", r.URL.Path)
 	host, _ := os.Hostname()
-	fmt.Fprintf(w, "<h1>Hello, IOxKL!!</h1><p>\n")
-	fmt.Fprintf(w, "<h2>This is to demo this Go application as a Microservice</h2><p> \n")
+	fmt.Fprintf(w, "<h1>Hello, ConnectAsia!!</h1><p>\n")
+	fmt.Fprintf(w, "<h2>This is to demo this Go application in Cloud Run!</h2><p> \n")
 	fmt.Fprintf(w, "<h3>And running on the Container/Pod Name: %s</h3><p>\n", host)
 }
 // [END all]

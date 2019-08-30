@@ -4,6 +4,6 @@ RUN go install globalgoapp
 
 FROM alpine:latest
 COPY --from=0 /go/bin/globalgoapp .
-ENV PORT 8081
-EXPOSE 8081
+ENV PORT 8080
+EXPOSE 8080
 CMD ["./globalgoapp"]
