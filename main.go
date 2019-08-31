@@ -47,8 +47,8 @@ func main() {
 func hello(w http.ResponseWriter, r *http.Request) {
 	log.Printf("Serving request: %s", r.URL.Path)
 	host, _ := os.Hostname()
-	fmt.Fprintf(w, "<h1>Hello, ConnectAsia!!</h1><p>\n")
-	fmt.Fprintf(w, "<h2>This is to demo this Go application in Cloud Run!</h2><p> \n")
+	fmt.Fprintf(w, "<h1>Hello WWC Connect Asia!</h1><p>\n")
+	fmt.Fprintf(w, "<h2>This is to demo this Go application in: </h2><p> \n")
 	fmt.Fprintf(w, "<h3>And running on the Container/Pod Name: %s</h3><p>\n", host)
 }
 // [END all]
